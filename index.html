@@ -160,8 +160,8 @@
   /* mobile */
   @media(max-width:800px){
     #app{grid-template-columns:1fr;grid-template-rows:1fr}
-    .mapwrap{grid-area:1/1}
-    aside{grid-area:1/1;align-self:end;height:46vh;border-radius:22px 22px 0 0;box-shadow:0 -10px 30px rgba(0,0,0,.12);border:0;transition:height .3s}
+    .mapwrap{grid-area:1/1;height:100vh;height:100dvh}
+    aside{grid-area:1/1;align-self:end;height:46vh;position:relative;z-index:500;border-radius:22px 22px 0 0;box-shadow:0 -10px 30px rgba(0,0,0,.12);border:0;transition:height .3s}
     aside.full{height:88vh}
     aside.mini{height:150px}
     .toggle{display:block;width:44px;height:5px;border-radius:5px;background:var(--line);margin:8px auto 0;border:0}
