@@ -351,10 +351,9 @@ const map = L.map("map",{zoomControl:false,minZoom:8,maxBounds:[[47.6,0.6],[49.7
 L.control.zoom({position:"bottomleft"}).addTo(map);
 const OSM_ATT='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 const BASES={
-  "🗺️ Plan":L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",{maxZoom:20,updateWhenIdle:true,updateWhenZooming:false,keepBuffer:1,subdomains:"abcd",attribution:OSM_ATT+' &copy; <a href="https://carto.com/attributions">CARTO</a>'}),
+  "🗺️ Plan":L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,updateWhenIdle:true,updateWhenZooming:false,keepBuffer:1,attribution:OSM_ATT}),
   "🏙️ Rues détaillées":L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",{maxZoom:19,updateWhenIdle:true,updateWhenZooming:false,keepBuffer:1,attribution:"Tiles &copy; Esri"}),
-  "🛰️ Satellite":L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{maxZoom:19,updateWhenIdle:true,updateWhenZooming:false,keepBuffer:1,attribution:"Imagerie &copy; Esri"}),
-  "🌍 OpenStreetMap":L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,updateWhenIdle:true,updateWhenZooming:false,keepBuffer:1,attribution:OSM_ATT})
+  "🛰️ Satellite":L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{maxZoom:19,updateWhenIdle:true,updateWhenZooming:false,keepBuffer:1,attribution:"Imagerie &copy; Esri"})
 };
 let baseName="🗺️ Plan"; try{ const b=localStorage.getItem("graillal-base"); if(BASES[b]) baseName=b; }catch(e){}
 BASES[baseName].addTo(map);
