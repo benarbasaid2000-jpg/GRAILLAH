@@ -1,0 +1,57 @@
+name: Mettre à jour les restos (data.json)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * 1"   # chaque lundi à ~4h
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Télécharger les restos halal d'Île-de-France
+        run: |
+          python3 - <<'PY'
+          import json, time, urllib.request, urllib.parse, datetime
+          ENDPOINTS=["https://overpass-api.de/api/interpreter","https://overpass.kumi.systems/api/interpreter","https://overpass.private.coffee/api/interpreter"]
+          KEEP={"name","amenity","cuisine","diet:halal","diet:halal:certification","halal:certification","certification:halal","halal_certification","certification","website","contact:website","brand:website","brand","addr:housenumber","addr:street","addr:city","addr:postcode","phone","contact:phone","contact:instagram","opening_hours","takeaway","delivery","outdoor_seating"}
+          def q(b): return f'''[out:json][timeout:180];
+          (
+            nw["amenity"~"^(restaurant|fast_food|food_court|cafe)$"]["diet:halal"~"^(yes|only|limited|partial)$"]({b});
+            nw["amenity"~"^(restaurant|fast_food)$"]["cuisine"~"halal",i]({b});
+            nw["amenity"~"^(restaurant|fast_food)$"]["name"~"halal",i]({b});
+          );
+          out center tags qt;'''.replace("\n          ","\n")
+          def fetch(b):
+              for attempt in range(3):
+                  for url in ENDPOINTS:
+                      try:
+                          data=urllib.parse.urlencode({"data":q(b)}).encode()
+                          with urllib.request.urlopen(urllib.request.Request(url,data=data,headers={"User-Agent":"graillal-build"}),timeout=240) as r:
+                              return json.load(r)["elements"]
+                      except Exception as e:
+                          print("échec",url,b,e); time.sleep(10)
+              raise SystemExit("Overpass indisponible pour "+b)
+          S,W,N,E=48.1,1.4,49.25,3.6
+          rows,cols=3,4
+          out={}
+          for i in range(rows):
+              for j in range(cols):
+                  b=f"{S+(N-S)*i/rows:.4f},{W+(E-W)*j/cols:.4f},{S+(N-S)*(i+1)/rows:.4f},{W+(E-W)*(j+1)/cols:.4f}"
+                  els=fetch(b); print(b,len(els))
+                  for e in els:
+                      t=e.get("tags",{})
+                      if "name" not in t: continue
+                      c=e.get("center") or {"lat":e.get("lat"),"lon":e.get("lon")}
+                      out[(e["type"],e["id"])]={"type":e["type"],"id":e["id"],"center":c,"tags":{k:v for k,v in t.items() if k in KEEP}}
+          if len(out)<200: raise SystemExit("trop peu de résultats : "+str(len(out)))
+          json.dump({"generated":datetime.datetime.utcnow().isoformat()+"Z","elements":list(out.values())},open("data.json","w"),ensure_ascii=False,separators=(",",":"))
+          print("total",len(out))
+          PY
+      - name: Enregistrer data.json
+        run: |
+          git config user.name "graillal-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data.json
+          git diff --cached --quiet || (git commit -m "Mise à jour des restos" && git push)
