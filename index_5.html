@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Graillal — Où grailler halal en Île-de-France</title>
+<meta name="description" content="Graillal : la carte des restos et fast-foods halal en Île-de-France, avec avis et notes.">
+<meta name="apple-mobile-web-app-title" content="Graillal">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0f8a5f">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--green:#0f8a5f;--green2:#0b6b4a;--ink:#14201b;--muted:#6b7a73;--line:#e6ece9;--bg:#f5f8f6;--orange:#f08a24;--card:#fff}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{font-family:"Plus Jakarta Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg);overflow:hidden}
+  button,input,select{font:inherit;color:inherit}
+  button{cursor:pointer}
+  #app{display:grid;grid-template-columns:400px 1fr;height:100vh;height:100dvh}
+  #map{height:100%;z-index:1}
+
+  /* panneau */
+  aside{background:var(--card);display:flex;flex-direction:column;border-right:1px solid var(--line);z-index:5;min-height:0}
+  .top{padding:18px 18px 12px;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:10px}
+  .logo{width:40px;height:40px;border-radius:12px;display:block}
+  .brand h1{font-size:19px;font-weight:800;letter-spacing:-.3px}
+  .brand small{display:block;color:var(--muted);font-size:12px;font-weight:500}
+  .search{position:relative;margin-top:14px}
+  .search input{width:100%;padding:12px 14px 12px 40px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg);outline:none;font-size:16px}
+  .search input:focus{border-color:var(--green);background:#fff}
+  .search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted)}
+  .chips{display:flex;gap:6px;margin-top:10px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{white-space:nowrap;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600;color:var(--muted);transition:all .15s}
+  .chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+  .chip.mob{display:none}
+  @media(max-width:800px){.chip.mob{display:inline-block}}
+  .chip.near{border-color:var(--green);color:var(--green)}
+  .chip.near.on{background:var(--green);color:#fff}
+  .bar{display:flex;align-items:center;justify-content:space-between;padding:10px 18px;font-size:13px;color:var(--muted);border-bottom:1px solid var(--line)}
+  .bar select{border:0;background:transparent;font-weight:600;color:var(--ink);outline:none}
+  .bar label{display:flex;align-items:center;gap:6px;cursor:pointer}
+  #list{overflow-y:auto;flex:1;min-height:0}
+  .item{display:flex;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .15s}
+  .item:hover,.item.sel{background:#f0f7f3}
+  .ic{width:44px;height:44px;border-radius:14px;flex:none;display:grid;place-items:center;font-size:22px;background:#eaf5ef}
+  .ic.ff{background:#fff1e3}
+  .item h3{font-size:15px;font-weight:700;line-height:1.25}
+  .item .meta{font-size:12.5px;color:var(--muted);margin-top:2px}
+  .badges{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
+  .bdg{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:#eaf5ef;color:var(--green2)}
+  .bdg.o{background:#fff1e3;color:#b35e0c}
+  .bdg.g{background:#eef1f0;color:var(--muted)}
+  .dist{margin-left:auto;font-size:12px;font-weight:700;color:var(--green);white-space:nowrap}
+  .fav{margin-left:auto;background:none;border:0;font-size:18px;line-height:1;opacity:.35;transition:opacity .15s,transform .15s}
+  .fav.on{opacity:1}
+  .fav:hover{transform:scale(1.15)}
+  .state{padding:40px 24px;text-align:center;color:var(--muted);font-size:14px}
+  .state b{display:block;font-size:40px;margin-bottom:8px}
+  .spin{width:34px;height:34px;border:3px solid var(--line);border-top-color:var(--green);border-radius:50%;animation:sp 1s linear infinite;margin:0 auto 14px}
+  @keyframes sp{to{transform:rotate(360deg)}}
+  .more{display:block;width:calc(100% - 36px);margin:14px 18px 20px;padding:10px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font-weight:600}
+  .foot{padding:10px 18px;font-size:11px;color:var(--muted);border-top:1px solid var(--line);line-height:1.5}
+  .foot a{color:var(--green2)}
+
+  /* fiche */
+  .sheet{position:absolute;right:18px;top:18px;width:360px;max-height:calc(100% - 36px);overflow:auto;background:#fff;border-radius:22px;box-shadow:0 20px 50px rgba(20,32,27,.2);z-index:10;display:none;animation:pop .25s ease}
+  .sheet.open{display:block}
+  @keyframes pop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+  .sheet .hero{height:110px;border-radius:22px 22px 0 0;background:linear-gradient(135deg,var(--green),var(--green2));position:relative;display:flex;align-items:flex-end;padding:16px 20px;color:#fff}
+  .sheet .hero.ff{background:linear-gradient(135deg,#f6a04b,#e0701a)}
+  .sheet .hero .em{position:absolute;right:18px;top:12px;font-size:56px;opacity:.9}
+  .sheet .x{position:absolute;left:12px;top:12px;width:32px;height:32px;border-radius:50%;border:0;background:rgba(255,255,255,.25);color:#fff;font-size:18px}
+  .sheet .body{padding:18px 20px 20px}
+  .sheet h2{font-size:21px;font-weight:800;letter-spacing:-.3px;line-height:1.2}
+  .rows{margin-top:14px;display:grid;gap:10px;font-size:14px}
+  .rows div{display:flex;gap:10px;align-items:flex-start}
+  .rows span.k{width:22px;text-align:center;flex:none}
+  .rows a{color:var(--green2);word-break:break-all}
+  .acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}
+  .act{display:flex;align-items:center;justify-content:center;gap:6px;padding:11px;border-radius:14px;border:0;font-weight:700;font-size:14px;text-decoration:none;background:var(--bg);color:var(--ink)}
+  .act.p{background:var(--green);color:#fff}
+  .warn{margin-top:14px;font-size:12px;color:var(--muted);background:var(--bg);border-radius:12px;padding:10px 12px;line-height:1.5}
+
+  /* marqueurs */
+  .pin{width:34px;height:34px;border-radius:50% 50% 50% 4px;transform:rotate(-45deg);background:var(--green);border:3px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,.25);display:grid;place-items:center}
+  .pin span{transform:rotate(45deg);font-size:15px}
+  .pin.ff{background:var(--orange)}
+  .pin.sel{transform:rotate(-45deg) scale(1.25)}
+  .me{width:18px;height:18px;border-radius:50%;background:#2f7bf6;border:3px solid #fff;box-shadow:0 0 0 8px rgba(47,123,246,.2)}
+  .marker-cluster-small,.marker-cluster-medium,.marker-cluster-large{background:rgba(15,138,95,.25)!important}
+  .marker-cluster-small div,.marker-cluster-medium div,.marker-cluster-large div{background:var(--green)!important;color:#fff;font-weight:800;font-family:"Plus Jakarta Sans"}
+  .leaflet-container{font-family:inherit}
+
+  .fabs{position:absolute;right:18px;bottom:28px;z-index:6;display:flex;flex-direction:column;gap:8px}
+  .fabs button{width:48px;height:48px;border-radius:16px;border:0;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.15);font-size:20px}
+  .toast{position:absolute;left:50%;top:18px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:999px;font-size:13px;z-index:20;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
+  .toast.show{opacity:1}
+  .mapwrap{position:relative;height:100%}
+
+  /* avis Google */
+  .gbox{margin-top:16px;border:1.5px solid var(--line);border-radius:16px;padding:14px}
+  .gbox .gh{display:flex;align-items:center;gap:8px;font-weight:800}
+  .gbox .gh .G{font-weight:800;letter-spacing:-.5px}
+  .gbox .grev{border-top:1px solid var(--line);padding:10px 0;font-size:13.5px}
+  .gbox .grev .a{display:flex;align-items:center;gap:8px;font-weight:700}
+  .gbox .grev .a img{width:26px;height:26px;border-radius:50%}
+  .gbox .grev .a span{margin-left:auto;font-size:11.5px;color:var(--muted);font-weight:500}
+  .gbox .grev p{color:#3d4a44;margin-top:4px}
+  .gbox .gfoot{font-size:11px;color:var(--muted);margin-top:8px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  .modal{position:fixed;inset:0;background:rgba(20,32,27,.45);z-index:50;display:none;align-items:center;justify-content:center;padding:16px}
+  .modal.open{display:flex}
+  .modal .box{background:#fff;border-radius:22px;max-width:480px;width:100%;padding:22px;max-height:90vh;overflow:auto}
+  .modal h3{font-size:20px;font-weight:800}
+  .modal ol{margin:12px 0 12px 18px;font-size:14px;line-height:1.6;color:#3d4a44}
+  .modal input{width:100%;padding:12px;border-radius:12px;border:1.5px solid var(--line);font-family:ui-monospace,monospace;font-size:16px}
+  .modal .row{display:flex;gap:8px;margin-top:12px;justify-content:flex-end}
+  /* certification */
+  .bdg.c{background:#0f8a5f;color:#fff}
+  .cert{margin-top:16px;border:1.5px solid var(--line);border-radius:16px;padding:14px}
+  .cert h4,.revs h4{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:8px}
+  .cert .ok{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--green2)}
+  .cert .no{color:var(--muted);font-size:13.5px}
+  .cert select{font-size:16px;margin-top:10px;width:100%;padding:9px 10px;border-radius:10px;border:1.5px solid var(--line);background:#fff}
+  .cert .lnk{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:var(--green2)}
+
+  /* La Brochette — notation */
+  .brochette{display:inline-flex;align-items:center}
+  .score-big{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#fff7ec,#fff);border:1.5px solid #f6dfc2;border-radius:18px;padding:14px 16px}
+  .score-big .n{font-size:34px;font-weight:800;letter-spacing:-1px;line-height:1}
+  .score-big .n small{font-size:13px;color:var(--muted);font-weight:600}
+  .tier{font-size:13px;font-weight:800;padding:3px 10px;border-radius:999px;display:inline-block;margin-top:4px}
+  .t0{background:#fde8e8;color:#b42318}.t1{background:#fff1e3;color:#b35e0c}.t2{background:#eef1f0;color:#3d4a44}.t3{background:#e6f4ff;color:#1565c0}.t4{background:linear-gradient(90deg,#f7d774,#f0a92e);color:#5a3b00}
+  .crit{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:10px;text-align:center;font-size:11px;color:var(--muted)}
+  .crit b{display:block;font-size:15px;color:var(--ink)}
+  .revs{margin-top:18px}
+  .rv{border-top:1px solid var(--line);padding:12px 0;font-size:14px}
+  .rv .h{display:flex;align-items:center;gap:8px;font-weight:700}
+  .rv .d{margin-left:auto;font-size:12px;color:var(--muted);font-weight:500}
+  .rv p{color:#3d4a44;margin-top:4px}
+  .rv .del{border:0;background:none;color:var(--muted);font-size:12px;text-decoration:underline;margin-top:4px}
+  .form{margin-top:12px;background:var(--bg);border-radius:16px;padding:14px}
+  .form .q{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;font-size:13.5px;font-weight:600}
+  .stars{position:relative;display:inline-block;line-height:1;letter-spacing:1px;color:#d9dee2;white-space:nowrap}
+  .stars .f{position:absolute;left:0;top:0;overflow:hidden;color:#fbbc04;white-space:nowrap}
+  .pick{display:flex;gap:2px}
+  .pick button{border:0;background:none;font-size:24px;line-height:1;color:#d9dee2;padding:0 1px;transition:transform .1s,color .1s}
+  .pick button.on{color:#fbbc04}
+  .pick button:hover{transform:scale(1.15)}
+  .form textarea,.form input{width:100%;margin-top:6px;padding:10px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font-size:16px;resize:vertical}
+  .live{display:flex;align-items:center;gap:10px;margin:10px 0 4px;font-size:13px;font-weight:700}
+  .mini-score{display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:700;color:var(--ink);white-space:nowrap}
+  .toggle{display:none}
+
+  /* mobile */
+  /* ===== Mobile : carte plein écran + barre de recherche flottante + panneau glissant ===== */
+  @media(max-width:800px){
+    :root{--sheet:42vh;--safe-t:env(safe-area-inset-top,0px);--safe-b:env(safe-area-inset-bottom,0px)}
+    html,body{overscroll-behavior:none}
+    #app{display:block;height:100%}
+    .mapwrap{position:fixed;inset:0;height:auto}
+    #map{position:absolute;inset:0;height:auto}
+    .leaflet-control-zoom{display:none}
+    .leaflet-top.leaflet-right{top:calc(var(--safe-t) + 128px)}
+    .leaflet-bottom.leaflet-left,.leaflet-bottom.leaflet-right{bottom:calc(var(--sheet) + 4px)}
+
+    /* barre du haut flottante */
+    .top{position:fixed;left:10px;right:10px;top:calc(var(--safe-t) + 10px);z-index:600;background:#fff;border-radius:20px;
+         padding:10px 10px 8px;border:0;box-shadow:0 8px 24px rgba(20,32,27,.18)}
+    .brand{display:none}
+    .search{margin-top:0}
+    .search input{background:#f2f5f3;border:0;padding:12px 12px 12px 40px;border-radius:14px}
+    .chips{margin-top:8px}
+    .chip{padding:7px 12px}
+    #cuisines{display:none}
+    .top.more #cuisines{display:flex}
+
+    /* panneau du bas */
+    aside{position:fixed;left:0;right:0;bottom:0;height:var(--sheet);z-index:500;border:0;border-radius:22px 22px 0 0;
+          box-shadow:0 -8px 30px rgba(20,32,27,.18);transition:height .28s cubic-bezier(.2,.8,.2,1);padding-bottom:var(--safe-b)}
+    aside.drag{transition:none}
+    .toggle{display:block;width:100%;height:26px;border:0;background:none;position:relative;flex:none;touch-action:none}
+    .toggle::after{content:"";position:absolute;left:50%;top:10px;width:42px;height:5px;border-radius:5px;background:#d6dedb;transform:translateX(-50%)}
+    .bar{padding:2px 16px 10px;touch-action:none}
+    .bar select{font-size:16px}
+    .item{padding:12px 16px}
+    .foot{display:none}
+
+    /* fiche resto en bas d'écran */
+    .sheet{position:fixed;left:0;right:0;top:auto;bottom:0;width:auto;max-height:82vh;border-radius:24px 24px 0 0;z-index:700;padding-bottom:var(--safe-b);
+           animation:up .3s cubic-bezier(.2,.8,.2,1)}
+    @keyframes up{from{transform:translateY(40%);opacity:.5}to{transform:none;opacity:1}}
+    .sheet .hero{height:96px;border-radius:24px 24px 0 0}
+    .sheet .hero .em{width:60px!important;height:60px!important;top:14px}
+    .acts{grid-template-columns:1fr 1fr}
+
+    /* boutons ronds au-dessus du panneau */
+    .fabs{position:fixed;right:12px;top:auto;bottom:calc(var(--sheet) + 12px);z-index:450;flex-direction:column;transition:bottom .28s}
+    .fabs button{width:44px;height:44px;border-radius:14px}
+    .toast{position:fixed;top:calc(var(--safe-t) + 130px)}
+    .modal .box{border-radius:22px}
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <aside id="panel">
+    <button class="toggle" id="toggle" aria-label="Agrandir la liste"></button>
+    <div class="top">
+      <div class="brand">
+        <img class="logo" src="data:image/png;base64,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" alt="Graillal">
+        <div><h1>Graillal</h1><small>Où grailler halal en Île-de-France</small></div>
+      </div>
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Resto, cuisine… ou une ville + Entrée">
+      </div>
+      <div class="chips" id="chips">
+        <button class="chip near" id="near">📍 Près de moi</button>
+        <button class="chip on" data-t="all">Tout</button>
+        <button class="chip" data-t="restaurant">🍽️ Restaurants</button>
+        <button class="chip" data-t="fast_food">🍔 Fast-food</button>
+        <button class="chip" data-t="cert">✅ Certifiés</button>
+        <button class="chip" data-t="top">⭐ Mieux notés</button>
+        <button class="chip" data-t="fav">❤️ Favoris</button>
+        <button class="chip mob" id="moreCuis">🍴 Cuisines</button>
+      </div>
+      <div class="chips" id="cuisines"></div>
+    </div>
+    <div class="bar">
+      <span id="count">Chargement…</span>
+      <select id="only" title="Niveau halal">
+        <option value="all">Toutes catégories</option>
+        <option value="only">100 % halal</option>
+        <option value="partial">Poulet halal uniquement</option>
+      </select>
+    </div>
+    <div id="list"></div>
+    <div class="foot">Données © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">contributeurs OpenStreetMap</a>, mises à jour en direct. Graillal ne garantit pas le statut halal. Un resto manque ? <a href="https://www.openstreetmap.org" target="_blank" rel="noopener">Ajoute-le sur OpenStreetMap</a> avec l'étiquette « diet:halal=yes » (ou « limited » si seulement le poulet est halal).</div>
+  </aside>
+
+  <div class="mapwrap">
+    <div id="map"></div>
+    <div class="fabs">
+      <button id="locate" title="Me localiser">📍</button>
+      <button id="reload" title="Recharger les données">↻</button>
+      <button id="gset" title="Avis Google : réglages">G</button>
+    </div>
+    <div class="sheet" id="sheet"></div>
+    <div class="toast" id="toast"></div>
+    <div class="modal" id="gmodal"><div class="box">
+      <h3>⭐ Activer les avis Google</h3>
+      <p style="font-size:14px;color:var(--muted);margin-top:6px">Google n'autorise à afficher ses avis qu'en direct, avec une clé personnelle (gratuite jusqu'à un certain nombre d'utilisations par mois).</p>
+      <ol>
+        <li>Va sur <a href="https://console.cloud.google.com/google/maps-apis/start" target="_blank" rel="noopener">console.cloud.google.com</a> et connecte-toi avec ton compte Google.</li>
+        <li>Crée un projet, puis active <b>Maps JavaScript API</b> et <b>Places API (New)</b>. Google demande une carte bancaire pour vérifier le compte.</li>
+        <li>Dans « Identifiants », crée une <b>clé API</b>. Pour la protéger, limite-la à ces deux API et à l'adresse de ton site.</li>
+        <li>Colle la clé ci-dessous.</li>
+      </ol>
+      <input id="gkey" placeholder="AIza…" autocomplete="off">
+      <div class="row"><button class="act" id="gdel" style="border:0">Supprimer la clé</button><button class="act p" id="gsave" style="border:0">Enregistrer</button></div>
+    </div></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"></script>
+<script>
+/* Si la bibliothèque de carte n'a pas pu se charger (aperçu sans internet), on l'explique au lieu d'un écran vide */
+if(!window.L){
+  document.getElementById("map").innerHTML='<div style="height:100%;display:grid;place-items:center;padding:30px;text-align:center;color:#14201b;background:#eef3f0"><div style="max-width:420px"><div style="font-size:48px">🗺️</div><h2 style="margin:10px 0">La carte ne peut pas s\'afficher ici</h2><p style="color:#6b7a73;line-height:1.6">Cet aperçu bloque l\'accès à internet. <b>Télécharge le fichier</b>, puis ouvre-le dans <b>Chrome, Edge ou Firefox sur ordinateur</b> (double-clic), connecté à internet.</p></div></div>';
+  document.getElementById("list").innerHTML='<div class="state"><b>📥</b>Ouvre Graillal dans ton navigateur pour charger les restos.</div>';
+  document.getElementById("count").textContent="";
+  throw new Error("Leaflet non chargé");
+}
+/* ================= Config ================= */
+const ENDPOINTS = [
+  "https://overpass-api.de/api/interpreter",
+  "https://overpass.kumi.systems/api/interpreter",
+  "https://overpass.private.coffee/api/interpreter"
+];
+const Q = (b)=>`[out:json][timeout:25];
+(
+  nw["amenity"~"^(restaurant|fast_food|food_court|cafe)$"]["diet:halal"~"^(yes|only|limited|partial)$"](${b});
+  nw["amenity"~"^(restaurant|fast_food)$"]["cuisine"~"halal",i](${b});
+  nw["amenity"~"^(restaurant|fast_food)$"]["name"~"halal",i](${b});
+);
+out center tags qt;`;
+const FAV_KEY = "graillal-favs", KNOWN_KEY="graillal-known";
+const CELL_LAT=0.1, CELL_LON=0.15; let MIN_ZOOM=11, staticReady=false;
+const IDF=[[48.1,1.4],[49.25,3.6]];   // Île-de-France : on ne charge rien en dehors
+const CITIES=[["Paris",48.8566,2.3522],["Saint-Denis",48.9362,2.3574],["Montreuil",48.8638,2.4485],["Créteil",48.7904,2.4556],["Nanterre",48.8924,2.2071],["Argenteuil",48.9472,2.2467],["Versailles",48.8014,2.1301],["Évry",48.6324,2.4403],["Cergy",49.0364,2.0763],["Meaux",48.9601,2.8786]];
+const CACHE_TTL = 24*3600*1000;
+
+const CUISINE_FR = {burger:"Burger",kebab:"Kebab",pizza:"Pizza",tacos:"Tacos",turkish:"Turc",lebanese:"Libanais",
+  moroccan:"Marocain",algerian:"Algérien",tunisian:"Tunisien",indian:"Indien",pakistani:"Pakistanais",chicken:"Poulet",
+  fried_chicken:"Poulet frit",sandwich:"Sandwich",african:"Africain",senegalese:"Sénégalais",asian:"Asiatique",
+  chinese:"Chinois",japanese:"Japonais",sushi:"Sushi",thai:"Thaï",french:"Français",grill:"Grillades",steak_house:"Grillades",
+  mediterranean:"Méditerranéen",oriental:"Oriental",middle_eastern:"Moyen-Orient",syrian:"Syrien",afghan:"Afghan",
+  italian:"Italien",mexican:"Mexicain",american:"Américain",bagel:"Bagel",crepe:"Crêpes",ice_cream:"Glaces",
+  coffee_shop:"Café",tex_mex:"Tex-mex",korean:"Coréen",bangladeshi:"Bangladais",sri_lankan:"Sri-lankais",
+  regional:"Régional",fish:"Poisson",seafood:"Fruits de mer",couscous:"Couscous",tajine:"Tajine",shawarma:"Chawarma",
+  falafel:"Falafel",greek:"Grec",naan:"Naan",smash_burger:"Smash burger"};
+const ICON = c => /burger/.test(c)?"🍔":/pizza/.test(c)?"🍕":/kebab|shawarma|turk|grec|greek/.test(c)?"🥙":/tacos|mex/.test(c)?"🌮":
+  /chicken/.test(c)?"🍗":/sushi|japan/.test(c)?"🍣":/chin|asian|thai|kore/.test(c)?"🍜":/indian|pakist|bangla|sri/.test(c)?"🍛":
+  /moroc|alger|tunis|couscous|tajine|orient/.test(c)?"🥘":/leban|syri|middle|falafel/.test(c)?"🧆":/african|seneg/.test(c)?"🍲":
+  /ice|dessert|crepe/.test(c)?"🍨":/coffee|cafe/.test(c)?"☕":/grill|steak/.test(c)?"🥩":/sandwich|bagel/.test(c)?"🥪":null;
+
+/* ================= État ================= */
+let all = [], view = [], type = "all", cuisine = null, onlyFull = "all", me = null, nearMode = false, selected = null;
+let favs = new Set(); try{ favs = new Set(JSON.parse(localStorage.getItem(FAV_KEY)||"[]")); }catch(e){}
+const REV_KEY="graillal-reviews", VER_KEY="graillal-verif";
+let reviews={}, verif={};
+try{ reviews=JSON.parse(localStorage.getItem(REV_KEY)||"{}"); verif=JSON.parse(localStorage.getItem(VER_KEY)||"{}"); }catch(e){}
+const saveRV=()=>{ try{ localStorage.setItem(REV_KEY,JSON.stringify(reviews)); localStorage.setItem(VER_KEY,JSON.stringify(verif)); }catch(e){} };
+
+/* ===== Notation par étoiles ===== */
+const CRIT=[["gout","Goût"],["copieux","Quantité"],["prix","Prix"],["accueil","Accueil"],["proprete","Propreté"]];
+const ORGS=["AVS","Achahada","ARGML (Mosquée de Lyon)","Mosquée de Paris (SFCVH)","Halal Correct","HQC France","ACMIF (Mosquée d'Évry)","Autre organisme"];
+function critAvg(rs){ const o={}; CRIT.forEach(([k])=>o[k]=rs.reduce((a,r)=>a+r[k],0)/rs.length); return o; }
+const revScore = r => CRIT.reduce((a,[k])=>a+r[k],0)/CRIT.length;          // note d'un avis /5
+function scoreOf(id){ const rs=reviews[id]; if(!rs||!rs.length) return null; return rs.reduce((a,r)=>a+revScore(r),0)/rs.length; }
+const fmt1 = n => n.toFixed(1).replace(".",",");
+function stars(v,size=14){ const pct=Math.max(0,Math.min(100,(v||0)/5*100));
+  return `<span class="stars" style="font-size:${size}px" aria-label="${v?fmt1(v):0} sur 5">★★★★★<span class="f" style="width:${pct}%">★★★★★</span></span>`; }
+function logo(p,sz){
+  if(!p.domain) return p.emoji;
+  return `<img src="https://icons.duckduckgo.com/ip3/${p.domain}.ico" width="${sz}" height="${sz}" alt="" loading="lazy" style="border-radius:6px;object-fit:contain;display:block"
+    onerror="this.replaceWith(document.createTextNode('${p.emoji}'))">`;
+}
+function halalBadge(p){
+  return p.halal==="partial" ? '<span class="bdg o">Poulet halal uniquement</span>'
+       : '<span class="bdg">100 % halal</span>';
+}
+const isCert = p => !!(p.certOsm || verif[p.id]);
+const certLabel = p => verif[p.id] || p.certOsm;
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function toast(t){ const e=$("toast"); e.textContent=t; e.classList.add("show"); clearTimeout(e._t); e._t=setTimeout(()=>e.classList.remove("show"),2500); }
+
+/* ================= Carte ================= */
+const map = L.map("map",{zoomControl:false,minZoom:8,maxBounds:[[47.6,0.6],[49.7,4.4]],tap:true}).fitBounds([[48.80,2.22],[48.92,2.47]],{paddingTopLeft:[0,innerWidth<=800?140:0],paddingBottomRight:[0,innerWidth<=800?innerHeight*0.42:0]});
+L.control.zoom({position:"bottomleft"}).addTo(map);
+const OSM_ATT='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+const BASES={
+  "🗺️ Plan":L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",{maxZoom:20,updateWhenIdle:true,updateWhenZooming:false,keepBuffer:1,subdomains:"abcd",attribution:OSM_ATT+' &copy; <a href="https://carto.com/attributions">CARTO</a>'}),
+  "🏙️ Rues détaillées":L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",{maxZoom:19,updateWhenIdle:true,updateWhenZooming:false,keepBuffer:1,attribution:"Tiles &copy; Esri"}),
+  "🛰️ Satellite":L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{maxZoom:19,updateWhenIdle:true,updateWhenZooming:false,keepBuffer:1,attribution:"Imagerie &copy; Esri"}),
+  "🌍 OpenStreetMap":L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,updateWhenIdle:true,updateWhenZooming:false,keepBuffer:1,attribution:OSM_ATT})
+};
+let baseName="🗺️ Plan"; try{ const b=localStorage.getItem("graillal-base"); if(BASES[b]) baseName=b; }catch(e){}
+BASES[baseName].addTo(map);
+L.control.layers(BASES,null,{position:"topright",collapsed:true}).addTo(map);
+map.on("baselayerchange",e=>{ try{ localStorage.setItem("graillal-base",e.name); }catch(_){} });
+// si le fond de carte ne charge pas, on prévient
+let tileErr=0; Object.values(BASES).forEach(l=>l.on("tileerror",()=>{ if(++tileErr===8) toast("Le fond de carte ne se charge pas : ouvre le fichier dans ton navigateur, connecté à internet"); }));
+const cluster = L.markerClusterGroup({showCoverageOnHover:false,maxClusterRadius:60,spiderfyOnMaxZoom:true,chunkedLoading:true});
+map.addLayer(cluster);
+let meMarker = null;
+
+function pinIcon(p, sel){
+  return L.divIcon({className:"",iconSize:[34,34],iconAnchor:[17,34],
+    html:`<div class="pin ${p.type==="fast_food"?"ff":""} ${sel?"sel":""}"><span>${logo(p,18)}</span></div>`});
+}
+
+/* ================= Données ================= */
+function parse(json){
+  const out = [];
+  for(const e of json.elements||[]){
+    const t = e.tags||{}; const lat = e.lat ?? e.center?.lat, lon = e.lon ?? e.center?.lon;
+    if(lat==null || !t.name) continue;
+    const cuisines = (t.cuisine||"").toLowerCase().split(/[;,]/).map(s=>s.trim()).filter(c=>c && c!=="halal");
+    const c0 = cuisines.join(" ");
+    const typ = t.amenity==="fast_food" ? "fast_food" : "restaurant";
+    const city = t["addr:city"] || t["addr:postcode"] ? [t["addr:postcode"],t["addr:city"]].filter(Boolean).join(" ") : "";
+    out.push({
+      id:e.type[0]+e.id, osm:`https://www.openstreetmap.org/${e.type}/${e.id}`,
+      name:t.name, lat, lon, type:typ, cuisines,
+      halal: t["diet:halal"]==="only" ? "only" : /^(limited|partial)$/.test(t["diet:halal"]||"") ? "partial" : "yes",
+      domain: (()=>{ const w=t.website||t["contact:website"]||t["brand:website"]||""; try{ return w? new URL(/^https?:/i.test(w)?w:"https://"+w).hostname.replace(/^www\./,"") : ""; }catch(e){ return ""; } })(),
+      brand: t.brand||"",
+      certOsm: t["diet:halal:certification"]||t["halal:certification"]||t["certification:halal"]||t["halal_certification"]||(t["certification"]&&/halal|avs|achahada|argml|mosqu/i.test(t["certification"])?t["certification"]:"")||"",
+      street:[t["addr:housenumber"],t["addr:street"]].filter(Boolean).join(" "), city,
+      phone:t.phone||t["contact:phone"]||"", web:t.website||t["contact:website"]||"",
+      insta:t["contact:instagram"]||"", hours:t.opening_hours||"",
+      takeaway:t.takeaway, delivery:t.delivery, terrace:t.outdoor_seating,
+      emoji: ICON(c0) || (typ==="fast_food"?"🍔":"🍽️")
+    });
+  }
+  const seen = new Set();
+  return out.filter(p=>{ const k=p.name.toLowerCase()+Math.round(p.lat*2e3)+Math.round(p.lon*2e3); if(seen.has(k)) return false; seen.add(k); return true; });
+}
+
+/* Les restos sont chargés zone par zone (petites cases de carte), puis gardés 24 h sur l'appareil */
+const byId=new Map(), cellsDone=new Set();
+let known={}; try{ known=JSON.parse(localStorage.getItem(KNOWN_KEY)||"{}"); }catch(e){}
+Object.values(known).forEach(p=>byId.set(p.id,p));
+const remember=p=>{ known[p.id]=p; try{ localStorage.setItem(KNOWN_KEY,JSON.stringify(known)); }catch(e){} };
+function merge(list){ list.forEach(p=>byId.set(p.id,p)); all=[...byId.values()]; }
+function cellsFor(bounds){
+  const out=[]; const i0=Math.floor(bounds.getSouth()/CELL_LAT), i1=Math.floor(bounds.getNorth()/CELL_LAT);
+  const j0=Math.floor(bounds.getWest()/CELL_LON), j1=Math.floor(bounds.getEast()/CELL_LON);
+  for(let i=i0;i<=i1;i++) for(let j=j0;j<=j1;j++) out.push([i,j]);
+  return out;
+}
+const cellKey=([i,j])=>"graillal-c-"+i+"_"+j;
+let busy=false, again=false, lastErr="";
+/* Chargement instantané : data.json (restos d'Île-de-France préparés à l'avance) */
+async function loadStatic(force){
+  try{
+    const r=await fetch("data.json"+(force?"?t="+Date.now():""));
+    if(!r.ok) throw new Error(r.status);
+    merge(parse(await r.json()));
+    staticReady=true; MIN_ZOOM=8; ready(); return true;
+  }catch(e){ console.warn("data.json indisponible, chargement en direct",e); return false; }
+}
+async function load(force){
+  if(staticReady && !force){ ready(); return; }
+  if(busy){ again=true; return; }
+  if(map.getZoom()<MIN_ZOOM){ refresh(); return; }
+  const cells=cellsFor(map.getBounds().pad(0.05)).filter(([i,j])=>(i+1)*CELL_LAT>IDF[0][0]&&i*CELL_LAT<IDF[1][0]&&(j+1)*CELL_LON>IDF[0][1]&&j*CELL_LON<IDF[1][1]);
+  if(cells.length>36){ refresh(); return; }
+  if(!cells.length){ refresh(); return; }
+  const missing=[];
+  for(const c of cells){
+    const k=cellKey(c); if(!force && cellsDone.has(k)) continue;
+    if(!force){ try{ const x=JSON.parse(localStorage.getItem(k)||"null"); if(x && Date.now()-x.t<CACHE_TTL){ merge(x.d); cellsDone.add(k); continue; } }catch(e){} }
+    missing.push(c);
+  }
+  if(!missing.length){ ready(); return; }
+  busy=true; $("count").innerHTML='<span style="display:inline-flex;align-items:center;gap:6px"><span class="spin" style="width:14px;height:14px;border-width:2px;margin:0"></span>Recherche des restos…</span>';
+  const s_=Math.min(...missing.map(c=>c[0]))*CELL_LAT, n_=(Math.max(...missing.map(c=>c[0]))+1)*CELL_LAT;
+  const w_=Math.min(...missing.map(c=>c[1]))*CELL_LON, e_=(Math.max(...missing.map(c=>c[1]))+1)*CELL_LON;
+  const bbox=[s_,w_,n_,e_].map(v=>v.toFixed(4)).join(",");
+  let ok=false; lastErr="";
+  for(const url of ENDPOINTS){
+    try{
+      const ctrl=new AbortController(); const to=setTimeout(()=>ctrl.abort(),70000);
+      const r=await fetch(url,{method:"POST",body:"data="+encodeURIComponent(Q(bbox)),headers:{"Content-Type":"application/x-www-form-urlencoded"},signal:ctrl.signal});
+      clearTimeout(to); if(!r.ok) throw new Error("serveur "+r.status);
+      const got=parse(await r.json()); merge(got);
+      // rangement par case + mémoire 24 h
+      const per={}; missing.forEach(c=>per[cellKey(c)]=[]);
+      got.forEach(p=>{ const k=cellKey([Math.floor(p.lat/CELL_LAT),Math.floor(p.lon/CELL_LON)]); if(per[k]) per[k].push(p); });
+      for(const k in per){ cellsDone.add(k); try{ localStorage.setItem(k,JSON.stringify({t:Date.now(),d:per[k]})); }catch(e){} }
+      ok=true; break;
+    }catch(e){ lastErr=(e.name==="AbortError"?"délai dépassé":e.message||String(e)); console.warn("Overpass",url,e); }
+  }
+  busy=false;
+  if(!ok) toast("Chargement impossible ("+lastErr+"). Réessaie avec ↻");
+  ready();
+  if(again){ again=false; load(false); }
+}
+
+function ready(){
+  // cuisines les plus fréquentes
+  const cnt = {};
+  all.forEach(p=>p.cuisines.forEach(c=>cnt[c]=(cnt[c]||0)+1));
+  const top = Object.entries(cnt).sort((a,b)=>b[1]-a[1]).slice(0,14).map(x=>x[0]);
+  $("cuisines").innerHTML = top.map(c=>`<button class="chip ${c===cuisine?"on":""}" data-c="${esc(c)}">${ICON(c)||"🍴"} ${esc(CUISINE_FR[c]||c.replace(/_/g," "))}</button>`).join("");
+  refresh();
+}
+
+/* ================= Filtres & rendu ================= */
+const norm = s => (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
+function distKm(a,b,c,d){ const R=6371,x=(c-a)*Math.PI/180,y=(d-b)*Math.PI/180; const h=Math.sin(x/2)**2+Math.cos(a*Math.PI/180)*Math.cos(c*Math.PI/180)*Math.sin(y/2)**2; return 2*R*Math.asin(Math.sqrt(h)); }
+const fmtD = d => d<1 ? Math.round(d*1000)+" m" : d.toFixed(1).replace(".",",")+" km";
+
+let shown = 30;
+function refresh(){
+  const q = norm($("q").value.trim());
+  const zoomedOut = map.getZoom()<MIN_ZOOM, bnds = map.getBounds();
+  const global = type==="fav" || type==="top" || type==="cert";
+  view = all.filter(p=>{
+    if(!global && !nearMode && !bnds.contains([p.lat,p.lon])) return false;
+    if(!global && !nearMode && zoomedOut) return false;
+    if(type==="fav" && !favs.has(p.id)) return false;
+    if(type==="cert" && !isCert(p)) return false;
+    if(type==="top" && scoreOf(p.id)==null) return false;
+    if((type==="restaurant"||type==="fast_food") && p.type!==type) return false;
+    if(cuisine && !p.cuisines.includes(cuisine)) return false;
+    if(onlyFull==="only" && p.halal==="partial") return false;
+    if(onlyFull==="partial" && p.halal!=="partial") return false;
+    if(q){
+      const hay = norm([p.name,p.city,p.street,...p.cuisines.map(c=>CUISINE_FR[c]||c)].join(" "));
+      if(!q.split(/\s+/).every(w=>hay.includes(w))) return false;
+    }
+    return true;
+  });
+  if(me){ view.forEach(p=>p.d=distKm(me[0],me[1],p.lat,p.lon)); }
+  if(type==="top") view.sort((a,b)=>scoreOf(b.id)-scoreOf(a.id));
+  else if(me && nearMode) view.sort((a,b)=>a.d-b.d); else view.sort((a,b)=>a.name.localeCompare(b.name,"fr"));
+  if(me && nearMode) view = view.filter(p=>p.d<=5);
+  shown = 30;
+  if(!busy) $("count").textContent = `${view.length.toLocaleString("fr-FR")} lieu${view.length>1?"x":""}${nearMode?" à moins de 5 km":(type==="all"||type==="restaurant"||type==="fast_food")?" dans cette zone":""}`;
+  renderMarkers(); renderList();
+}
+
+const markers = new Map();
+let lastSig="";
+function renderMarkers(){
+  const sig=view.map(p=>p.id).join("|")+"#"+selected+"#"+[...favs].length;
+  if(sig===lastSig) return; lastSig=sig;
+  cluster.clearLayers(); markers.clear();
+  const ms = view.map(p=>{
+    const m = L.marker([p.lat,p.lon],{icon:pinIcon(p,p.id===selected),title:p.name});
+    m.on("click",()=>select(p.id,false));
+    markers.set(p.id,m); return m;
+  });
+  cluster.addLayers(ms);
+}
+function renderList(){
+  const global = type==="fav" || type==="top" || type==="cert";
+  if(!global && !nearMode && map.getZoom()<MIN_ZOOM){
+    $("count").textContent="Zoome sur une ville";
+    $("list").innerHTML=`<div class="state"><b>🗺️</b><b style="font-size:17px;color:var(--ink)">Où tu veux grailler ?</b>Zoome sur la carte, cherche une ville, ou appuie sur <b>📍 Près de moi</b>.
+      <div class="chips" style="justify-content:center;flex-wrap:wrap;margin-top:14px">${CITIES.map(c=>`<button class="chip" data-city="${c[0]}">${c[0]}</button>`).join("")}</div></div>`;
+    return;
+  }
+  if(!view.length){
+    const msg = type==="fav" ? ["💔","Aucun favori pour l'instant.<br>Appuie sur ♡ pour en ajouter."]
+      : type==="top" ? ["⭐","Aucun resto noté pour l'instant.<br>Ouvre une fiche et laisse ton avis !"]
+      : type==="cert" ? ["✅","Aucun resto certifié trouvé.<br>Ouvre une fiche, vérifie sur le site de l'organisme puis indique la certification."]
+      : ["🔍", busy ? "Recherche en cours…" : "Aucun resto halal trouvé dans cette zone.<br><small>Déplace la carte, ou ajoute un resto manquant sur OpenStreetMap.</small>"];
+    $("list").innerHTML = `<div class="state"><b>${msg[0]}</b>${msg[1]}</div>`;
+    return;
+  }
+  $("list").innerHTML = view.slice(0,shown).map(p=>`
+    <div class="item ${p.id===selected?"sel":""}" data-id="${p.id}">
+      <div class="ic ${p.type==="fast_food"?"ff":""}">${logo(p,26)}</div>
+      <div style="min-width:0;flex:1">
+        <h3>${esc(p.name)}</h3>
+        <div class="meta">${esc([p.street,p.city].filter(Boolean).join(", ") || (p.type==="fast_food"?"Fast-food":"Restaurant"))}</div>
+        <div class="badges">
+          ${isCert(p)?`<span class="bdg c">✅ ${esc(certLabel(p).split(" (")[0])}</span>`:""}
+          ${halalBadge(p)}
+          <span class="bdg ${p.type==="fast_food"?"o":"g"}">${p.type==="fast_food"?"Fast-food":"Restaurant"}</span>
+          ${p.cuisines.slice(0,2).map(c=>`<span class="bdg g">${esc(CUISINE_FR[c]||c.replace(/_/g," "))}</span>`).join("")}
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+        <button class="fav ${favs.has(p.id)?"on":""}" data-fav="${p.id}" aria-label="Favori">${favs.has(p.id)?"❤️":"♡"}</button>
+        ${me && p.d!=null?`<span class="dist">${fmtD(p.d)}</span>`:""}
+        ${scoreOf(p.id)!=null?`<span class="mini-score">${fmt1(scoreOf(p.id))} ${stars(scoreOf(p.id),12)} <span style="color:var(--muted);font-weight:500">(${reviews[p.id].length})</span></span>`:""}
+      </div>
+    </div>`).join("") + (view.length>shown?`<button class="more" id="more">Voir plus (${(view.length-shown).toLocaleString("fr-FR")} restants)</button>`:"");
+  const more=$("more"); if(more) more.onclick=()=>{ shown+=30; renderList(); };
+}
+
+/* ================= Fiche ================= */
+function select(id, fly=true){
+  const prev = selected; selected = id;
+  const p = all.find(x=>x.id===id); if(!p) return;
+  [prev,id].forEach(k=>{ const m=markers.get(k); const q=all.find(x=>x.id===k); if(m&&q) m.setIcon(pinIcon(q,k===selected)); });
+  if(fly){ cluster.zoomToShowLayer(markers.get(id) || L.marker([p.lat,p.lon]), ()=>{}); map.flyTo([p.lat,p.lon],Math.max(map.getZoom(),16),{duration:.6}); }
+  document.querySelectorAll(".item").forEach(e=>e.classList.toggle("sel",e.dataset.id===id));
+  const dest = `${p.lat},${p.lon}`;
+  const web = p.web && /^https?:\/\//i.test(p.web) ? p.web : (p.web?"https://"+p.web:"");
+  $("sheet").innerHTML = `
+    <div class="hero ${p.type==="fast_food"?"ff":""}"><button class="x" id="close">×</button><span class="em" style="background:#fff;border-radius:18px;width:72px;height:72px;display:grid;place-items:center;font-size:40px">${logo(p,46)}</span>
+      <div style="font-size:12px;font-weight:700;opacity:.9;text-transform:uppercase;letter-spacing:.08em">${p.type==="fast_food"?"Fast-food":"Restaurant"} · ${p.halal==="partial"?"poulet halal uniquement":"100 % halal"}</div></div>
+    <div class="body">
+      <div style="display:flex;gap:10px;align-items:start"><h2>${esc(p.name)}</h2>
+        <button class="fav ${favs.has(p.id)?"on":""}" data-fav="${p.id}" style="font-size:22px;margin-top:2px">${favs.has(p.id)?"❤️":"♡"}</button></div>
+      <div class="badges">${p.cuisines.map(c=>`<span class="bdg g">${esc(CUISINE_FR[c]||c.replace(/_/g," "))}</span>`).join("")}
+        ${p.takeaway==="yes"?'<span class="bdg g">🥡 À emporter</span>':""}${p.delivery==="yes"?'<span class="bdg g">🛵 Livraison</span>':""}${p.terrace==="yes"?'<span class="bdg g">☀️ Terrasse</span>':""}</div>
+      <div class="rows">
+        ${p.street||p.city?`<div><span class="k">📍</span><span>${esc([p.street,p.city].filter(Boolean).join(", "))}</span></div>`:""}
+        ${me&&p.d!=null?`<div><span class="k">🚶</span><span>à ${fmtD(p.d)} de toi</span></div>`:""}
+        ${p.hours?`<div><span class="k">🕒</span><span>${esc(p.hours)}</span></div>`:""}
+        ${p.phone?`<div><span class="k">📞</span><a href="tel:${esc(p.phone.replace(/\s/g,""))}">${esc(p.phone)}</a></div>`:""}
+        ${web?`<div><span class="k">🌐</span><a href="${esc(web)}" target="_blank" rel="noopener">${esc(p.web.replace(/^https?:\/\/(www\.)?/,"").replace(/\/$/,""))}</a></div>`:""}
+      </div>
+      <div class="acts">
+        <a class="act p" href="https://www.google.com/maps/dir/?api=1&destination=${dest}" target="_blank" rel="noopener">🧭 Itinéraire</a>
+        <a class="act" href="https://waze.com/ul?ll=${dest}&navigate=yes" target="_blank" rel="noopener">🚗 Waze</a>
+        ${p.phone?`<a class="act" href="tel:${esc(p.phone.replace(/\s/g,""))}">📞 Appeler</a>`:""}
+        <a class="act" href="https://www.google.com/search?q=${encodeURIComponent(p.name+" "+(p.city||"France"))}" target="_blank" rel="noopener">⭐ Avis</a>
+      </div>
+      <div class="gbox" id="gbox">${googleBlockInit()}</div>
+      ${brochetteBlock(p)}
+      <div class="cert">
+        <h4>Certification halal</h4>
+        ${p.certOsm?`<div class="ok">✅ ${esc(p.certOsm)} <small style="color:var(--muted);font-weight:500">(indiqué sur OpenStreetMap)</small></div>`:""}
+        ${verif[p.id]?`<div class="ok">✅ ${esc(verif[p.id])} <small style="color:var(--muted);font-weight:500">(vérifié par toi)</small></div>`:""}
+        ${!isCert(p)?`<div class="no">Aucune certification connue pour ce lieu. Vérifie sur le site de l'organisme ou demande à voir le certificat sur place.</div>`:""}
+        <select id="verifSel">
+          <option value="">${verif[p.id]?"Changer / retirer ma vérification":"J'ai vérifié : certifié par…"}</option>
+          ${ORGS.map(o=>`<option ${verif[p.id]===o?"selected":""}>${o}</option>`).join("")}
+          ${verif[p.id]?'<option value="__del">Retirer ma vérification</option>':""}
+        </select>
+        <a class="lnk" href="https://avs.fr/etablissements/index.html?category=restaurants" target="_blank" rel="noopener">🔎 Vérifier dans la liste officielle AVS</a>
+      </div>
+      <div class="warn">ℹ️ Le statut halal vient d'OpenStreetMap ou de ta propre vérification : ce n'est pas une garantie. Seule la liste officielle de l'organisme certificateur fait foi. <a href="${p.osm}" target="_blank" rel="noopener" style="color:var(--green2)">Corriger cette fiche</a></div>
+    </div>`;
+  bindSheet(p);
+  $("sheet").classList.add("open");
+  $("close").onclick = ()=>{ $("sheet").classList.remove("open"); const m=markers.get(selected); const q=all.find(x=>x.id===selected); selected=null; if(m&&q) m.setIcon(pinIcon(q,false)); document.querySelectorAll(".item.sel").forEach(e=>e.classList.remove("sel")); };
+  if(isMob()) snapSheet(0);
+}
+
+/* ================= Avis ================= */
+let draft = {};
+function brochetteBlock(p){
+  const rs = reviews[p.id]||[], sc = scoreOf(p.id), a = rs.length ? critAvg(rs) : null;
+  draft = {gout:0,copieux:0,prix:0,accueil:0,proprete:0};
+  const dist=[5,4,3,2,1].map(n=>[n,rs.filter(r=>Math.round(revScore(r))===n).length]);
+  return `
+  <div class="revs">
+    <h4>Avis et notes</h4>
+    <div class="score-big" style="background:#fff;border-color:var(--line)">
+      ${sc!=null?`<div style="text-align:center"><div class="n">${fmt1(sc)}</div>${stars(sc,16)}<div style="font-size:12px;color:var(--muted);margin-top:2px">${rs.length} avis</div></div>
+        <div style="flex:1;display:grid;gap:3px">${dist.map(([n,c])=>`<div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)">${n}<div style="flex:1;height:7px;border-radius:7px;background:#eef1f0;overflow:hidden"><div style="height:100%;width:${c/rs.length*100}%;background:#fbbc04"></div></div></div>`).join("")}</div>`
+      :`<div>${stars(0,18)}<div style="font-weight:700;margin-top:4px">Pas encore d'avis</div><small style="color:var(--muted)">Sois le premier à donner ton avis !</small></div>`}
+    </div>
+    ${a?`<div style="margin-top:10px;display:grid;gap:4px">${CRIT.map(([k,l])=>`<div style="display:flex;align-items:center;justify-content:space-between;font-size:13px"><span>${l}</span><span>${stars(a[k],13)} <b style="margin-left:4px">${fmt1(a[k])}</b></span></div>`).join("")}</div>`:""}
+    <div class="form">
+      <div style="font-weight:700;margin-bottom:8px">Donner mon avis</div>
+      ${CRIT.map(([k,l])=>`<div class="q"><span>${l}</span><div class="pick" data-k="${k}">${[1,2,3,4,5].map(n=>`<button type="button" data-n="${n}" aria-label="${l} ${n} sur 5">★</button>`).join("")}</div></div>`).join("")}
+      <div class="live" id="live"><span style="color:var(--muted);font-weight:500">Note chaque critère de 1 à 5 étoiles</span></div>
+      <input id="rvName" placeholder="Ton prénom (optionnel)" maxlength="30">
+      <textarea id="rvTxt" rows="2" placeholder="Ton avis : la viande, la sauce, l'attente…" maxlength="500"></textarea>
+      <button class="act p" id="rvSave" style="width:100%;margin-top:8px;border:0" disabled>Publier mon avis</button>
+    </div>
+    ${rs.length?`<div style="margin-top:10px">${rs.slice().reverse().map((r,i)=>`<div class="rv"><div class="h"><span style="width:28px;height:28px;border-radius:50%;background:#e8f0fe;color:#1a73e8;display:grid;place-items:center;font-size:13px">${esc((r.name||"A")[0].toUpperCase())}</span>${esc(r.name||"Anonyme")}<span class="d">${new Date(r.t).toLocaleDateString("fr-FR")}</span></div>
+      <div style="margin-top:4px">${stars(revScore(r),13)}</div>${r.txt?`<p>${esc(r.txt)}</p>`:""}<button class="del" data-del="${rs.length-1-i}">Supprimer</button></div>`).join("")}</div>`:""}
+  </div>`;
+}
+function bindSheet(p){
+  const sh=$("sheet");
+  const gl=$("gload"); if(gl) gl.onclick=()=>loadGoogle(p);
+  if(gCache.has(p.id)) renderGoogle(gCache.get(p.id));
+  sh.querySelectorAll(".pick").forEach(m=>m.addEventListener("click",e=>{
+    const b=e.target.closest("button"); if(!b) return;
+    const k=m.dataset.k, n=+b.dataset.n; draft[k]=n;
+    m.querySelectorAll("button").forEach(x=>x.classList.toggle("on",+x.dataset.n<=n));
+    const done = CRIT.every(([c])=>draft[c]>0);
+    $("rvSave").disabled=!done;
+    if(done){ const v=revScore(draft); $("live").innerHTML=`Ta note : ${stars(v,16)} <b>${fmt1(v)}/5</b>`; }
+  }));
+  $("rvSave").onclick=()=>{
+    remember(p);
+    (reviews[p.id]=reviews[p.id]||[]).push({...draft,name:$("rvName").value.trim(),txt:$("rvTxt").value.trim(),t:Date.now()});
+    saveRV(); toast(`⭐ Avis publié · ${fmt1(revScore(draft))}/5`); select(p.id,false); renderList();
+  };
+  sh.querySelectorAll("[data-del]").forEach(b=>b.onclick=()=>{ reviews[p.id].splice(+b.dataset.del,1); if(!reviews[p.id].length) delete reviews[p.id]; saveRV(); select(p.id,false); renderList(); });
+  $("verifSel").onchange=e=>{
+    const v=e.target.value; if(!v) return;
+    if(v==="__del") delete verif[p.id]; else { verif[p.id]=v; remember(p); }
+    saveRV(); toast(v==="__del"?"Vérification retirée":"Certification enregistrée ✅"); select(p.id,false); renderList();
+  };
+}
+
+/* ================= Avis Google (en direct, via ta clé) ================= */
+let GKEY=""; try{ GKEY=localStorage.getItem("graillal-gkey")||""; }catch(e){}
+const gCache=new Map();            // seulement pendant la visite (pas de stockage durable : règle Google)
+let gLib=null;
+function loadGoogleLib(){
+  if(gLib) return gLib;
+  gLib=new Promise((res,rej)=>{
+    window.__gInit=()=>res();
+    const sc=document.createElement("script");
+    sc.src=`https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(GKEY)}&v=weekly&loading=async&language=fr&callback=__gInit`;
+    sc.onerror=()=>{ gLib=null; rej(new Error("chargement impossible")); };
+    window.gm_authFailure=()=>{ toast("Clé Google refusée : vérifie-la dans les réglages G"); };
+    document.head.appendChild(sc);
+  });
+  return gLib;
+}
+function googleBlockInit(){
+  return `<div class="gh"><span class="G"><span style="color:#4285f4">G</span><span style="color:#ea4335">o</span><span style="color:#fbbc04">o</span><span style="color:#4285f4">g</span><span style="color:#34a853">l</span><span style="color:#ea4335">e</span></span> Avis</div>
+    ${GKEY?`<button class="act p" id="gload" style="width:100%;margin-top:10px;border:0">Charger les avis Google</button>`
+          :`<p style="font-size:13px;color:var(--muted);margin-top:6px">Pour afficher les avis Google ici, ajoute ta clé Google (bouton <b>G</b> sur la carte).</p>`}`;
+}
+async function loadGoogle(p){
+  const box=$("gbox"); box.innerHTML=`<div class="gh">Avis Google</div><div style="padding:16px 0;text-align:center"><div class="spin"></div></div>`;
+  try{
+    await loadGoogleLib();
+    const {Place} = await google.maps.importLibrary("places");
+    const {places} = await Place.searchByText({
+      textQuery: [p.name, p.street, p.city || "France"].filter(Boolean).join(", "),
+      fields:["id","displayName","rating","userRatingCount","reviews","googleMapsURI","formattedAddress"],
+      locationBias:{center:{lat:p.lat,lng:p.lon},radius:300}, maxResultCount:1, language:"fr"
+    });
+    const pl = places && places[0];
+    if(!pl){ box.innerHTML=`<div class="gh">Avis Google</div><p style="font-size:13px;color:var(--muted);margin-top:6px">Ce lieu n'a pas été trouvé sur Google.</p>`; return; }
+    if(selected===p.id){ gCache.set(p.id,pl); renderGoogle(pl); }
+  }catch(e){
+    console.warn(e);
+    box.innerHTML=`<div class="gh">Avis Google</div><p style="font-size:13px;color:#b42318;margin-top:6px">Impossible de charger les avis : vérifie ta clé (Maps JavaScript API et Places API (New) activées) et ta connexion.</p>`;
+  }
+}
+function renderGoogle(pl){
+  const box=$("gbox"); if(!box) return;
+  const revs=(pl.reviews||[]).slice(0,5);
+  box.innerHTML=`${googleBlockInit().split("</div>")[0]}</div>
+    ${pl.rating!=null?`<div style="display:flex;align-items:center;gap:8px;margin-top:8px"><b style="font-size:26px">${fmt1(pl.rating)}</b>${stars(pl.rating,16)}<span style="font-size:12.5px;color:var(--muted)">${(pl.userRatingCount||0).toLocaleString("fr-FR")} avis</span></div>`:""}
+    ${revs.length?revs.map(r=>{
+      const a=r.authorAttribution||{}; const txt=(r.text||"");
+      return `<div class="grev"><div class="a">${a.photoURI?`<img src="${esc(a.photoURI)}" alt="" referrerpolicy="no-referrer">`:""}
+        ${a.uri?`<a href="${esc(a.uri)}" target="_blank" rel="noopener" style="color:inherit">${esc(a.displayName||"Utilisateur Google")}</a>`:esc(a.displayName||"Utilisateur Google")}
+        <span>${esc(r.relativePublishTimeDescription||"")}</span></div>
+        <div style="margin-top:3px">${stars(r.rating||0,12)}</div>${txt?`<p>${esc(txt)}</p>`:""}</div>`;}).join("")
+      :`<p style="font-size:13px;color:var(--muted);margin-top:6px">Pas d'avis écrit sur Google pour ce lieu.</p>`}
+    <div class="gfoot"><span>Avis fournis par Google</span>${pl.googleMapsURI?`<a href="${esc(pl.googleMapsURI)}" target="_blank" rel="noopener" style="color:var(--green2);font-weight:700">Tous les avis sur Google Maps →</a>`:""}</div>`;
+}
+$("gset").onclick=()=>{ $("gkey").value=GKEY; $("gmodal").classList.add("open"); };
+$("gmodal").addEventListener("click",e=>{ if(e.target.id==="gmodal") $("gmodal").classList.remove("open"); });
+$("gsave").onclick=()=>{ const k=$("gkey").value.trim(); if(!k){ toast("Colle ta clé d'abord"); return; }
+  const changed=k!==GKEY; GKEY=k; try{ localStorage.setItem("graillal-gkey",k); }catch(e){}
+  $("gmodal").classList.remove("open"); toast("Clé enregistrée ✅");
+  if(changed && gLib){ toast("Clé enregistrée : recharge la page pour l'utiliser"); }
+  if(selected) select(selected,false); };
+$("gdel").onclick=()=>{ GKEY=""; try{ localStorage.removeItem("graillal-gkey"); }catch(e){} $("gmodal").classList.remove("open"); toast("Clé supprimée"); if(selected) select(selected,false); };
+
+/* ================= Événements ================= */
+let tq; $("q").addEventListener("input",()=>{ clearTimeout(tq); tq=setTimeout(refresh,180); });
+$("chips").addEventListener("click",e=>{
+  const b=e.target.closest(".chip[data-t]"); if(!b) return;
+  type=b.dataset.t; document.querySelectorAll("#chips .chip[data-t]").forEach(x=>x.classList.toggle("on",x===b)); refresh();
+});
+$("cuisines").addEventListener("click",e=>{
+  const b=e.target.closest(".chip"); if(!b) return;
+  cuisine = cuisine===b.dataset.c ? null : b.dataset.c;
+  document.querySelectorAll("#cuisines .chip").forEach(x=>x.classList.toggle("on",x.dataset.c===cuisine)); refresh();
+});
+$("only").onchange = e=>{ onlyFull=e.target.value; refresh(); };
+$("list").addEventListener("click",e=>{
+  const f=e.target.closest("[data-fav]"); if(f){ e.stopPropagation(); toggleFav(f.dataset.fav); return; }
+  const it=e.target.closest(".item"); if(it) select(it.dataset.id);
+});
+$("sheet").addEventListener("click",e=>{ const f=e.target.closest("[data-fav]"); if(f) { toggleFav(f.dataset.fav); select(f.dataset.fav,false); } });
+function toggleFav(id){
+  favs.has(id)?favs.delete(id):favs.add(id);
+  const pp=byId.get(id); if(pp) remember(pp);
+  try{ localStorage.setItem(FAV_KEY,JSON.stringify([...favs])); }catch(e){}
+  toast(favs.has(id)?"Ajouté aux favoris ❤️":"Retiré des favoris");
+  if(type==="fav") refresh(); else renderList();
+}
+
+function locate(thenNear){
+  if(!navigator.geolocation){ toast("Localisation non disponible"); return; }
+  toast("Recherche de ta position…");
+  navigator.geolocation.getCurrentPosition(pos=>{
+    me=[pos.coords.latitude,pos.coords.longitude];
+    if(meMarker) meMarker.remove();
+    meMarker=L.marker(me,{icon:L.divIcon({className:"",html:'<div class="me"></div>',iconSize:[18,18],iconAnchor:[9,9]}),zIndexOffset:1000}).addTo(map);
+    map.flyTo(me,15,{duration:.8});
+    if(thenNear){ nearMode=true; $("near").classList.add("on"); }
+    refresh(); toast("Te voilà 📍");
+  },()=>toast("Autorise la localisation pour voir les restos près de toi"),{enableHighAccuracy:true,timeout:10000});
+}
+$("near").onclick=()=>{ if(nearMode){ nearMode=false; $("near").classList.remove("on"); refresh(); } else locate(true); };
+$("locate").onclick=()=>locate(false);
+$("reload").onclick=()=>staticReady?loadStatic(true):load(true);
+let mvT; map.on("moveend",()=>{ clearTimeout(mvT); mvT=setTimeout(()=>load(false),700); });
+$("list").addEventListener("click",e=>{ const c=e.target.closest("[data-city]"); if(!c) return; const x=CITIES.find(v=>v[0]===c.dataset.city); map.flyTo([x[1],x[2]],13,{duration:1}); });
+$("q").addEventListener("keydown",async e=>{
+  if(e.key!=="Enter") return;
+  const q=$("q").value.trim(); if(!q) return;
+  if(view.length && map.getZoom()>=MIN_ZOOM) return;   // la recherche filtre déjà des restos visibles
+  try{
+    toast("Recherche de « "+q+" »…");
+    const r=await fetch("https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=fr&viewbox=1.4,49.25,3.6,48.1&bounded=1&accept-language=fr&q="+encodeURIComponent(q));
+    const j=await r.json();
+    if(!j.length){ toast("Lieu introuvable"); return; }
+    $("q").value=""; map.flyTo([+j[0].lat,+j[0].lon],14,{duration:1}); toast("📍 "+j[0].display_name.split(",").slice(0,2).join(","));
+  }catch(err){ toast("Recherche de lieu impossible"); }
+});
+
+/* ===== Panneau du bas glissant (mobile) ===== */
+const isMob=()=>innerWidth<=800;
+const SNAP=()=>[150, Math.round(innerHeight*0.42), Math.round(innerHeight*0.86)];
+let sheetH=0;
+function setSheet(h,anim=true){
+  if(!isMob()) return;
+  const p=$("panel"); p.classList.toggle("drag",!anim);
+  sheetH=Math.max(120,Math.min(h,innerHeight*0.9));
+  document.documentElement.style.setProperty("--sheet",sheetH+"px");
+}
+function snapSheet(i){ setSheet(SNAP()[i]); }
+if(isMob()) snapSheet(1);
+let dragY=null, startH=0;
+["toggle","count"].forEach(id=>{
+  const el=id==="count"?$("count").parentElement:$(id);
+  el.addEventListener("touchstart",e=>{ dragY=e.touches[0].clientY; startH=sheetH; },{passive:true});
+});
+addEventListener("touchmove",e=>{ if(dragY==null) return; setSheet(startH+(dragY-e.touches[0].clientY),false); },{passive:true});
+addEventListener("touchend",()=>{ if(dragY==null) return; dragY=null; $("panel").classList.remove("drag");
+  const sn=SNAP(); let best=0; sn.forEach((v,i)=>{ if(Math.abs(v-sheetH)<Math.abs(sn[best]-sheetH)) best=i; }); snapSheet(best); });
+$("toggle").onclick=()=>{ const sn=SNAP(); snapSheet(sheetH<sn[1]-10?1:sheetH<sn[2]-10?2:0); };
+addEventListener("resize",()=>{ if(isMob()) setSheet(Math.min(sheetH||SNAP()[1],innerHeight*0.86)); });
+$("moreCuis").onclick=()=>{ document.querySelector(".top").classList.toggle("more"); $("moreCuis").classList.toggle("on"); };
+
+
+refresh();
+$("count").textContent="Chargement des restos…";
+loadStatic(false).then(ok=>{ if(!ok) load(false); });
+</script>
+</body>
+</html>
