@@ -97,7 +97,7 @@
   .me{width:18px;height:18px;border-radius:50%;background:#2f7bf6;border:3px solid #fff;box-shadow:0 0 0 8px rgba(47,123,246,.2)}
   .marker-cluster-small,.marker-cluster-medium,.marker-cluster-large{background:rgba(15,138,95,.25)!important}
   .marker-cluster-small div,.marker-cluster-medium div,.marker-cluster-large div{background:var(--green)!important;color:#fff;font-weight:800;font-family:"Plus Jakarta Sans"}
-  .leaflet-container{font-family:inherit}
+  .leaflet-container{font-family:inherit;position:relative}
 
   .fabs{position:absolute;right:18px;bottom:28px;z-index:6;display:flex;flex-direction:column;gap:8px}
   .fabs button{width:48px;height:48px;border-radius:16px;border:0;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.15);font-size:20px}
@@ -330,10 +330,27 @@ function scoreOf(id){ const rs=reviews[id]; if(!rs||!rs.length) return null; ret
 const fmt1 = n => n.toFixed(1).replace(".",",");
 function stars(v,size=14){ const pct=Math.max(0,Math.min(100,(v||0)/5*100));
   return `<span class="stars" style="font-size:${size}px" aria-label="${v?fmt1(v):0} sur 5">★★★★★<span class="f" style="width:${pct}%">★★★★★</span></span>`; }
+/* Logos : icône officielle du site de l'enseigne si elle existe, sinon une pastille originale (initiales + couleur) */
+const PAL=[["#fde8d8","#b5530f"],["#e3f1ea","#0f6b46"],["#e6ecfb","#2f4fa8"],["#f6e3f1","#9b2c7e"],["#fff3c9","#8a6a00"],["#e1f3f6","#13707f"],["#f1e6e0","#7a4a2d"],["#ece6f9","#5a3fb0"]];
+function initials(n){
+  const w=String(n||"?").replace(/[^\p{L}\p{N}\s]/gu," ").trim().split(/\s+/).filter(Boolean);
+  if(!w.length) return "?";
+  return ((w[0][0]||"")+(w[1]?w[1][0]:(w[0][1]||""))).toUpperCase();
+}
+function badge(name,sz){
+  let h=0; for(const c of String(name)) h=(h*31+c.charCodeAt(0))>>>0;
+  const [bg,fg]=PAL[h%PAL.length];
+  return `<span style="display:inline-grid;place-items:center;width:${sz}px;height:${sz}px;border-radius:${Math.round(sz*.3)}px;background:${bg};color:${fg};font:800 ${Math.round(sz*.42)}px/1 'Plus Jakarta Sans',system-ui,sans-serif;letter-spacing:-.02em">${esc(initials(name))}</span>`;
+}
 function logo(p,sz){
-  if(!p.domain) return p.emoji;
-  return `<img src="https://icons.duckduckgo.com/ip3/${p.domain}.ico" width="${sz}" height="${sz}" alt="" loading="lazy" style="border-radius:6px;object-fit:contain;display:block"
-    onerror="this.replaceWith(document.createTextNode('${p.emoji}'))">`;
+  if(!p.domain) return badge(p.name,sz);
+  const first = sz>30 ? "apple-touch-icon.png" : "favicon.ico";
+  return `<img src="https://${esc(p.domain)}/${first}" data-d="${esc(p.domain)}" data-n="${esc(p.name)}" data-s="${sz}" data-i="0" width="${sz}" height="${sz}" alt="" loading="lazy" referrerpolicy="no-referrer" style="border-radius:6px;object-fit:contain;display:block" onerror="logoFail(this)">`;
+}
+function logoFail(img){
+  const sz=+img.dataset.s;
+  if(img.dataset.i==="0" && sz>30){ img.dataset.i="1"; img.src="https://"+img.dataset.d+"/favicon.ico"; return; }
+  img.outerHTML=badge(img.dataset.n,sz);
 }
 function halalBadge(p){
   return p.halal==="partial" ? '<span class="bdg o">Poulet halal uniquement</span>'
@@ -347,7 +364,18 @@ const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">
 function toast(t){ const e=$("toast"); e.textContent=t; e.classList.add("show"); clearTimeout(e._t); e._t=setTimeout(()=>e.classList.remove("show"),2500); }
 
 /* ================= Carte ================= */
-const map = L.map("map",{zoomControl:false,minZoom:8,maxBounds:[[47.6,0.6],[49.7,4.4]],tap:true}).fitBounds([[48.80,2.22],[48.92,2.47]],{paddingTopLeft:[0,innerWidth<=800?140:0],paddingBottomRight:[0,innerWidth<=800?innerHeight*0.42:0]});
+const map = L.map("map",{zoomControl:false,minZoom:8,maxBounds:[[47.6,0.6],[49.7,4.4]],tap:true});
+/* Vue de départ sur Paris. Si la fenêtre est trop petite pour les marges du panneau, on évite le calcul qui plantait la carte. */
+(function(){
+  const mob=innerWidth<=800, pt=mob?140:0, pb=mob?innerHeight*0.42:0, sz=map.getSize();
+  try{
+    if(sz.y-pt-pb>120) map.fitBounds([[48.80,2.22],[48.92,2.47]],{paddingTopLeft:[0,pt],paddingBottomRight:[0,pb]});
+    else map.setView([48.8566,2.3522],11);
+  }catch(e){ map.setView([48.8566,2.3522],11); }
+})();
+map.getContainer().style.position="";   // laisse le CSS (ordinateur / mobile) décider, même si on redimensionne la fenêtre
+addEventListener("resize",()=>map.invalidateSize());
+addEventListener("load",()=>setTimeout(()=>map.invalidateSize(),300));
 L.control.zoom({position:"bottomleft"}).addTo(map);
 const OSM_ATT='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 const BASES={
