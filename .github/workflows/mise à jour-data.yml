@@ -8,47 +8,63 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - name: Télécharger les restos halal d'Île-de-France
+      - name: Télécharger l'extrait officiel d'Île-de-France (Geofabrik)
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y osmium-tool
+          curl -fL --retry 5 --retry-delay 10 -o idf.osm.pbf https://download.geofabrik.de/europe/france/ile-de-france-latest.osm.pbf
+          ls -lh idf.osm.pbf
+      - name: Extraire les restos
+        run: |
+          osmium tags-filter idf.osm.pbf nwr/amenity=restaurant,fast_food,food_court,cafe -o amen.osm.pbf --overwrite
+          osmium export amen.osm.pbf -f geojsonseq --add-unique-id=type_id -o amen.geojsonl --overwrite
+          ls -lh amen.geojsonl
+      - name: Fabriquer data.json
         run: |
           python3 - <<'PY'
-          import json, time, urllib.request, urllib.parse, datetime
-          ENDPOINTS=["https://overpass-api.de/api/interpreter","https://overpass.kumi.systems/api/interpreter","https://overpass.private.coffee/api/interpreter"]
+          import json, re, datetime
           KEEP={"name","amenity","cuisine","diet:halal","diet:halal:certification","halal:certification","certification:halal","halal_certification","certification","website","contact:website","brand:website","brand","addr:housenumber","addr:street","addr:city","addr:postcode","phone","contact:phone","contact:instagram","opening_hours","takeaway","delivery","outdoor_seating"}
-          def q(b): return f'''[out:json][timeout:180];
-          (
-            nw["amenity"~"^(restaurant|fast_food|food_court|cafe)$"]["diet:halal"~"^(yes|only|limited|partial)$"]({b});
-            nw["amenity"~"^(restaurant|fast_food)$"]["cuisine"~"halal",i]({b});
-            nw["amenity"~"^(restaurant|fast_food)$"]["name"~"halal",i]({b});
-          );
-          out center tags qt;'''.replace("\n          ","\n")
-          def fetch(b):
-              for attempt in range(3):
-                  for url in ENDPOINTS:
-                      try:
-                          data=urllib.parse.urlencode({"data":q(b)}).encode()
-                          with urllib.request.urlopen(urllib.request.Request(url,data=data,headers={"User-Agent":"graillal-build"}),timeout=240) as r:
-                              return json.load(r)["elements"]
-                      except Exception as e:
-                          print("échec",url,b,e); time.sleep(10)
-              raise SystemExit("Overpass indisponible pour "+b)
-          S,W,N,E=48.1,1.4,49.25,3.6
-          rows,cols=3,4
+          HALAL_VALUES={"yes","only","limited","partial"}
+          TYPES={"n":"node","w":"way","r":"relation"}
+          def coords(g,acc):
+              if isinstance(g,(list,tuple)):
+                  if len(g)>=2 and isinstance(g[0],(int,float)): acc.append(g)
+                  else:
+                      for x in g: coords(x,acc)
           out={}
-          for i in range(rows):
-              for j in range(cols):
-                  b=f"{S+(N-S)*i/rows:.4f},{W+(E-W)*j/cols:.4f},{S+(N-S)*(i+1)/rows:.4f},{W+(E-W)*(j+1)/cols:.4f}"
-                  els=fetch(b); print(b,len(els))
-                  for e in els:
-                      t=e.get("tags",{})
-                      if "name" not in t: continue
-                      c=e.get("center") or {"lat":e.get("lat"),"lon":e.get("lon")}
-                      out[(e["type"],e["id"])]={"type":e["type"],"id":e["id"],"center":c,"tags":{k:v for k,v in t.items() if k in KEEP}}
+          total=0
+          for line in open("amen.geojsonl",encoding="utf-8"):
+              line=line.strip().lstrip("\x1e")
+              if not line: continue
+              try: f=json.loads(line)
+              except Exception: continue
+              total+=1
+              t=f.get("properties") or {}
+              name=t.get("name")
+              if not name: continue
+              am=t.get("amenity","")
+              ok=False
+              if am in ("restaurant","fast_food","food_court","cafe") and t.get("diet:halal") in HALAL_VALUES: ok=True
+              if am in ("restaurant","fast_food"):
+                  if re.search("halal",t.get("cuisine",""),re.I): ok=True
+                  if re.search("halal",name,re.I): ok=True
+              if not ok: continue
+              acc=[]; coords((f.get("geometry") or {}).get("coordinates"),acc)
+              if not acc: continue
+              lon=(min(c[0] for c in acc)+max(c[0] for c in acc))/2
+              lat=(min(c[1] for c in acc)+max(c[1] for c in acc))/2
+              fid=str(f.get("id") or t.get("@id") or "")
+              m=re.match(r"([nwr])(\d+)",fid)
+              if not m: continue
+              out[(m.group(1),m.group(2))]={"type":TYPES[m.group(1)],"id":int(m.group(2)),"center":{"lat":round(lat,6),"lon":round(lon,6)},"tags":{k:v for k,v in t.items() if k in KEEP}}
+          print("objets lus:",total,"restos halal retenus:",len(out))
           if len(out)<200: raise SystemExit("trop peu de résultats : "+str(len(out)))
           json.dump({"generated":datetime.datetime.utcnow().isoformat()+"Z","elements":list(out.values())},open("data.json","w"),ensure_ascii=False,separators=(",",":"))
-          print("total",len(out))
           PY
+          ls -lh data.json
       - name: Enregistrer data.json
         run: |
           git config user.name "graillal-bot"
